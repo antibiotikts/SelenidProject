@@ -1,5 +1,6 @@
 package configs;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import pages.BasketPage;
 import pages.HomePage;
@@ -18,6 +19,13 @@ public class BaseTest {
     @BeforeEach
     public void openUrl() {
     open(ROZETKA);
+    }
+
+    @AfterEach
+    public void cleanBasket() {
+        basketPage
+                .openBasket()
+                .cleanBasket(basketPage.getProducts());
     }
 
 }

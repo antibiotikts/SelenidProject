@@ -6,11 +6,18 @@ public class RozetkaTest extends BaseTest {
     @Test
     void shouldSearchTest() {
         homePage.searchProduct("ipad");
+        searchByCatalogPage.openProduct();
+        productPage
+                .addOnBasket();
+
     }
 
     @Test
     void searchByCatalogTest() {
         homePage.searchByCatalog();
+        searchByCatalogPage.openProduct();
+        productPage
+                .addOnBasket();
     }
 
     @Test
@@ -25,8 +32,6 @@ public class RozetkaTest extends BaseTest {
                 .openProduct();
         productPage
                 .addOnBasket();
-        basketPage
-                .openBasket()
-                .cleanBasket(basketPage.getProducts());
+
     }
 }
